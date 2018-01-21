@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 260963725}
   - component: {fileID: 260963726}
   - component: {fileID: 260963727}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: prototype1_0020_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1329,9 +1329,15 @@ GameObject:
   - component: {fileID: 1079217548}
   - component: {fileID: 1079217551}
   - component: {fileID: 1079217550}
+<<<<<<< HEAD
   - component: {fileID: 1079217553}
   - component: {fileID: 1079217552}
   m_Layer: 0
+=======
+  - component: {fileID: 1079217552}
+  - component: {fileID: 1079217553}
+  m_Layer: 8
+>>>>>>> 8e96cd2a11938bf55e05fa9686758d135507df34
   m_Name: prototype1_0015_monkey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1411,7 +1417,7 @@ MonoBehaviour:
   throwPoint: {fileID: 1079217549}
   ball: {fileID: 1471231192014626, guid: f033054928a22e345a2cc92b66ff97bf, type: 2}
   speed: 1
-  timeTillHit: 2.57
+  timeTillHit: 1
 --- !u!61 &1079217551
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1445,11 +1451,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1079217547}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: 765d920b8c133674887dec81681c3601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hook: {fileID: 0}
   ropeActive: 0
+=======
+  m_Script: {fileID: 11500000, guid: a1aabc73bb20dcd4cb9e59f2478338d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  groundCheck: {fileID: 1307864936}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 4294967039
+  jumpFource: 350
+>>>>>>> 8e96cd2a11938bf55e05fa9686758d135507df34
 --- !u!50 &1079217553
 Rigidbody2D:
   serializedVersion: 4
@@ -1801,7 +1819,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1307864936}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1906,7 +1924,7 @@ GameObject:
   - component: {fileID: 1480327466}
   - component: {fileID: 1480327467}
   - component: {fileID: 1480327468}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: prototype1_0020_floor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
