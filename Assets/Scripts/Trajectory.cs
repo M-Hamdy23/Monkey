@@ -10,7 +10,7 @@ public class Trajectory : MonoBehaviour
     public GameObject ball;
     public float speed = 1;
     public float timeTillHit = 1f;
-
+    public GameObject teleportShorikin;
     void Start()
     {
 
