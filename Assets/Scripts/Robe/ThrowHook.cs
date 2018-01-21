@@ -24,7 +24,7 @@ public class ThrowHook : MonoBehaviour
 
 
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(0))
         {
 
 
