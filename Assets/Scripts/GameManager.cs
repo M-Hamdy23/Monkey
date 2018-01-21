@@ -5,14 +5,25 @@ using UnityEngine;
 public  class GameManager : MonoBehaviour {
 
     // Use this for initialization
-    public Tree []allTrees;
-	void Start () {
-        allTrees = FindObjectsOfType<Tree>() ;
+    public List<Tree> allTrees;
+    private void Awake()
+    {
+        var trees = FindObjectsOfType<Tree>();
+        for (int i = 0; i < trees.Length; i++)
+        {
+            allTrees.Add(trees[i]);
+        }
+    }
+    void Start () {
         
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    public int randomTree()
+    {
+        if (allTrees.Count <= 0)
+            return -1;
+
+        var num = Random.Range(0, allTrees.Count);
+        return num;
+    }
 }
