@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class Dcol : MonoBehaviour {
 
-   
+    public Moveplayer thePlayer;
+
+    private Vector3 newPlayerPos;
+
+    void Start()
+    {
+        thePlayer = FindObjectOfType<Moveplayer>();
+       // lastPlayerPos = thePlayer.transform.position;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("jjjjjjjjjjj");
         if (collision.gameObject.tag == "tree")
         {
+            thePlayer.transform.position = transform.position ;
             Destroy(this.gameObject);
         }
     }
