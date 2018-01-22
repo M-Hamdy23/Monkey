@@ -10,7 +10,7 @@ public class FollowCamera : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		targetPos = transform.position;
-        LowY = transform.position.y;
+        LowY = 0;
 	}
 	
 	// Update is called once per frame
@@ -22,6 +22,7 @@ public class FollowCamera : MonoBehaviour {
 			Vector3 targetDirection = (target.transform.position - posWithNoZ);
 			interpVelocity = targetDirection.magnitude * 10f;
 			targetPos = transform.position + (targetDirection.normalized * interpVelocity * Time.deltaTime);
+            
             if (targetPos.y< LowY){
                 targetPos.y = LowY;
             }

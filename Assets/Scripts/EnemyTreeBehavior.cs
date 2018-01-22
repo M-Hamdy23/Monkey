@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBehavior : MonoBehaviour {
+public class EnemyTreeBehavior : MonoBehaviour {
 
     
     public Tree target;
@@ -22,13 +22,22 @@ public class EnemyBehavior : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //transform.LookAt(player.transform);
-
-        float dir = target.gameObject.transform.position.x - transform.position.x;
-        rigid.velocity = new Vector2(dir/Mathf.Abs(dir)*speed,0);
-
+        if (target) {
+            Debug.Log(target.gameObject.name);
+            float dir = target.gameObject.transform.position.x - transform.position.x;
+            if (Mathf.Abs(dir) >= 1.2f)
+            {
+                rigid.velocity = new Vector2(dir / Mathf.Abs(dir) * speed, 0);
+                Debug.Log(rigid.velocity);
+            }
+            else
+                rigid.velocity = Vector2.zero;
+        }
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            gameManger.allTrees.RemoveAt(index);
             Destroy(target.gameObject);
+            target = null;
         }
             
         

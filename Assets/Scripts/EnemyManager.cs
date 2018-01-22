@@ -7,10 +7,10 @@ public class EnemyManager : MonoBehaviour {
     public GameObject EnemyType2;
     public GameObject spawnPos;
     public float respawnTime = 5;
+
     // Use this for initialization
     void Start () {
         StartCoroutine(Respawn());
-       
     }
 	
 	// Update is called once per frame
@@ -28,7 +28,9 @@ public class EnemyManager : MonoBehaviour {
                var obj= Instantiate(EnemyType1);
                 Vector3 pos = spawnPos.transform.position;
                 pos.z = 0;
+                pos.y = -3.158f;
                 obj.transform.position = pos;
+                obj.SetActive(true);
                
             }
             else
@@ -36,7 +38,9 @@ public class EnemyManager : MonoBehaviour {
                 var obj = Instantiate(EnemyType2);
                 Vector3 pos = spawnPos.transform.position;
                 pos.z = 0;
+                pos.y = -3.158f;
                 obj.transform.position = pos;
+                obj.SetActive(true);
             }
             
             yield return new WaitForSeconds(respawnTime);

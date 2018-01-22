@@ -23,7 +23,7 @@ public class Tbullet : MonoBehaviour {
 
         if (isWork)
         {
-            if (Input.GetMouseButton(1))
+            if (Input.GetKeyDown(KeyCode.T))
             {
                 FireBullet();
             }
