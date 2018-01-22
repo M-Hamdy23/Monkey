@@ -27,7 +27,7 @@ public class ThrowHook : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
 
-            
+
             if (ropeActive == false)
             {
                 Vector2 destiny = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -37,23 +37,22 @@ public class ThrowHook : MonoBehaviour
 
                 curHook.GetComponent<RopeScript>().destiny = destiny;
 
+                gameObject.GetComponent<Moveplayer>().enabled = false;
+                gameObject.GetComponent<PlayerScript>().enabled = true;
 
                 ropeActive = true;
-
-                GetComponent<Moveplayer>().enabled = false;
-                GetComponent<PlayerScript>().enabled = true;
             }
             else
             {
 
                 //delete rope
-
+                
                 Destroy(curHook);
 
-
+                gameObject.GetComponent<Moveplayer>().enabled = true;
+                gameObject.GetComponent<PlayerScript>().enabled = false;
                 ropeActive = false;
-                GetComponent<Moveplayer>().enabled = true;
-                GetComponent<PlayerScript>().enabled = false;
+
             }
         }
 

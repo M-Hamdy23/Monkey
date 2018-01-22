@@ -17,7 +17,7 @@ public class RopeScript : MonoBehaviour
 
     public GameObject lastNode;
 
-    int max=0;
+
     public LineRenderer lr;
 
     int vertexCount = 2;
@@ -47,24 +47,23 @@ public class RopeScript : MonoBehaviour
     {
 
 
-        transform.position = Vector2.MoveTowards(transform.position, destiny, speed);
+        transform.position = Vector2.Lerp( transform.position,destiny, speed);
 
 
 
 
-        if ((Vector2)transform.position != destiny&&max<=3)
+        if ((Vector2)transform.position != destiny)
         {
 
             if (Vector2.Distance(player.transform.position, lastNode.transform.position) > distance)
             {
 
 
-
                 CreateNode();
 
             }
 
-            player.transform.position = lastNode.transform.position;
+
         }
         else if (done == false)
         {
@@ -73,14 +72,14 @@ public class RopeScript : MonoBehaviour
 
 
 
-            while (Vector2.Distance(player.transform.position, lastNode.transform.position) > distance && max <= 3)
+            while (Vector2.Distance(player.transform.position, lastNode.transform.position) > distance )
             {
                 CreateNode();
             }
 
             player.transform.position = lastNode.transform.position;
+
             lastNode.GetComponent<HingeJoint2D>().connectedBody = player.GetComponent<Rigidbody2D>();
-            
         }
 
 
@@ -101,14 +100,14 @@ public class RopeScript : MonoBehaviour
 
         }
 
-       lr.SetPosition(i, player.transform.position);
+        lr.SetPosition(i, player.transform.position);
 
     }
 
 
     void CreateNode()
     {
-        max++;
+
         Vector2 pos2Create = player.transform.position - lastNode.transform.position;
         pos2Create.Normalize();
         pos2Create *= distance;
