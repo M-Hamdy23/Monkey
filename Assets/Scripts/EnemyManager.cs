@@ -33,7 +33,7 @@ public class EnemyManager : MonoBehaviour {
                 obj.SetActive(true);
                
             }
-            else
+            else 
             {
                 var obj = Instantiate(EnemyType2);
                 Vector3 pos = spawnPos.transform.position;
@@ -43,7 +43,10 @@ public class EnemyManager : MonoBehaviour {
                 obj.SetActive(true);
             }
             
+            
             yield return new WaitForSeconds(respawnTime);
         }
     }
+
+
 }

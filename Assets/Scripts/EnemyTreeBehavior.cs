@@ -6,47 +6,93 @@ public class EnemyTreeBehavior : MonoBehaviour {
 
     
     public Tree target;
+    public float hitDamage=0;
     public float speed=1;
     public Rigidbody2D rigid;
     private GameManager gameManger;
-    private int index;
+    public int index;
+    public bool isWork;
+    public float coolDown;
     // Use this for initialization
     void Start () {
         //player = GameObject.FindGameObjectWithTag("Player");
         rigid = gameObject.GetComponent<Rigidbody2D>();
         gameManger = FindObjectOfType<GameManager>();
         index = gameManger.randomTree();
-        target = gameManger.allTrees[index];
+        if (index != -1)
+        {
+            target = gameManger.allTrees[index];
+            target.myEnemy.Add(this);
+        }
+        else
+            target = null;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        //transform.LookAt(player.transform);
+        
         if (target) {
-            Debug.Log(target.gameObject.name);
+            
             float dir = target.gameObject.transform.position.x - transform.position.x;
             if (Mathf.Abs(dir) >= 1.2f)
             {
                 rigid.velocity = new Vector2(dir / Mathf.Abs(dir) * speed, 0);
-                Debug.Log(rigid.velocity);
+
             }
             else
+            {
                 rigid.velocity = Vector2.zero;
+                HitTree();
+            }
         }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            gameManger.allTrees.RemoveAt(index);
-            Destroy(target.gameObject);
-            target = null;
-        }
+
+        
             
         
     }
     
+    void HitTree()
+    {
+         
+        
+    }
+
     bool HpIsDone()
     {
         if (target.hp <= 0)
             return true;
         return false;
+    }
+
+    public void RandomTarget()
+    {
+        if (gameManger.allTrees.Count>0) {
+            index = gameManger.randomTree();
+            if (index != -1)
+            {
+                target = gameManger.allTrees[index];
+                target.myEnemy.Add(this);
+            } else
+                target = null;
+        }
+    }
+    public void removeTree()
+    {
+        if (index != gameManger.allTrees.Count-1)
+        {
+            //gameManger.allTrees[index+1].
+            for (int i = 0; i < gameManger.allTrees[index + 1].myEnemy.Count; i++)
+            {
+                gameManger.allTrees[index + 1].myEnemy[i].index = index;
+            }
+        }
+        
+        gameManger.allTrees.RemoveAt(index);
+    }
+    IEnumerator CoolDown()
+    {
+        isWork = false;
+        yield return new WaitForSeconds(coolDown);
+        isWork = true;
     }
 }
