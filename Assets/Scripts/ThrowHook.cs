@@ -15,47 +15,84 @@ public class ThrowHook : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        ropeActive = false;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-
-
-        if (Input.GetMouseButtonDown(1))
+        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+        //if (hit.collider)
         {
-
-
-            if (ropeActive == false)
+            //if (hit.collider.gameObject.tag == "bush" || ropeActive == true)
             {
-                Vector2 destiny = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                if (Input.GetMouseButtonDown(1))
+                {
 
 
-                curHook = (GameObject)Instantiate(hook, transform.position, Quaternion.identity);
+                    if (ropeActive == false &&hit.collider&& hit.collider.gameObject.tag == "bush")
+                    {
+                        Vector2 destiny = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-                curHook.GetComponent<RopeScript>().destiny = destiny;
 
-                gameObject.GetComponent<Moveplayer>().enabled = false;
-                gameObject.GetComponent<PlayerScript>().enabled = true;
+                        curHook = (GameObject)Instantiate(hook, transform.position, Quaternion.identity);
 
-                ropeActive = true;
+                        curHook.GetComponent<RopeScript>().destiny = destiny;
+
+                        gameObject.GetComponent<MonkeyController>().enabled = false;
+                        gameObject.GetComponent<PlayerScript>().enabled = true;
+
+                        ropeActive = true;
+                    }
+                    else 
+                    {
+
+                        {
+
+                            //delete rope
+
+                            Destroy(curHook);
+
+                            gameObject.GetComponent<MonkeyController>().enabled = true;
+                            gameObject.GetComponent<PlayerScript>().enabled = false;
+                            ropeActive = false;
+
+                        }
+                    }
+
+                }
+
             }
-            else
+
+
+        }
+        /*else if (ropeActive)
+        {
+            
             {
 
                 //delete rope
-                
+
                 Destroy(curHook);
 
-                gameObject.GetComponent<Moveplayer>().enabled = true;
+                gameObject.GetComponent<MonkeyController>().enabled = true;
                 gameObject.GetComponent<PlayerScript>().enabled = false;
                 ropeActive = false;
 
             }
         }
+        /*if (Input.GetMouseButtonDown(1))
+        {
 
+            //delete rope
 
+            Destroy(curHook);
+
+            gameObject.GetComponent<MonkeyController>().enabled = true;
+            gameObject.GetComponent<PlayerScript>().enabled = false;
+            ropeActive = false;
+
+        }*/
     }
 }

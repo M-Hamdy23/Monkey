@@ -215,7 +215,7 @@ MonoBehaviour:
   speed: 1
   distance: 0.8
   nodePrefab: {fileID: 1675389433781820, guid: 26b514a16b4e60e4fadfe554649ea8bd, type: 2}
-  player: {fileID: 1262882053469778, guid: 236f490e3d5614c4b8b9aeb62195d3c8, type: 2}
+  player: {fileID: 1270282687534336, guid: 30faeeab087158845bafe1bf58cfc312, type: 2}
   lastNode: {fileID: 0}
   lr: {fileID: 0}
   Nodes: []

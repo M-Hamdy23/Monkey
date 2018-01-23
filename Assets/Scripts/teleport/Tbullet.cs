@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,15 +7,16 @@ public class Tbullet : MonoBehaviour {
 
     public GameObject bulletPrefab;
     // Use this for initialization
-    public int power=2;
+    public GameObject player;
     public float coolDown=2;
-    public float attackSpeed = 10000.5f;
     Vector2 myPos;
     Vector2 direction;
-    int speed=20;
+    public float speed=1;
     public bool isWork = true;
+    Animator anim;
     void Start () {
-        
+        anim = GetComponent<Animator>();
+        player = GetComponent<MonkeyController>().gameObject;
     }
 	
 	// Update is called once per frame
@@ -25,7 +27,10 @@ public class Tbullet : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.T))
             {
-                FireBullet();
+                StartCoroutine(CoolDown());
+                isWork = false;
+                anim.SetTrigger("teleport");
+                
             }
         }
 
@@ -37,17 +42,22 @@ public class Tbullet : MonoBehaviour {
         myPos = new Vector2(transform.position.x, transform.position.y + 1);
         direction = target - myPos;
         direction.Normalize();
-
-        GameObject bulletInstance = (Instantiate(bulletPrefab, myPos, Quaternion.identity)) as GameObject;
+        
+        GameObject bulletInstance = (Instantiate(bulletPrefab, myPos,Quaternion.identity )) as GameObject;
+        Vector3 theScale = bulletInstance.transform.localScale;
+        theScale.x *=(player.transform.localScale.x/Mathf.Abs(player.transform.localScale.x));
+        bulletInstance.transform.localScale = theScale;
 
         Rigidbody2D rigid;
         rigid = bulletInstance.GetComponent<Rigidbody2D>();
 
         rigid.velocity = direction * speed;
         //StopCoroutine("CoolDown");
-        StartCoroutine(CoolDown());
+        
         //coolDown = Time.time + attackSpeed;
     }
+
+   
 
     IEnumerator CoolDown()
     {

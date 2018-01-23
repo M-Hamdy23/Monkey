@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Dcol : MonoBehaviour {
 
-    public Moveplayer thePlayer;
+    public MonkeyController thePlayer;
 
     private Vector3 newPlayerPos;
     //float lifetime = 2.0f;
     void Start()
     {
-        thePlayer = FindObjectOfType<Moveplayer>();
+        thePlayer = FindObjectOfType<MonkeyController>();
        // lastPlayerPos = thePlayer.transform.position;
 
     }

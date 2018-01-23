@@ -10,10 +10,10 @@ public class Trajectory : MonoBehaviour
     public GameObject ball;
     public float speed = 1;
     public float timeTillHit = 1f;
-
+    Animator anim;
     void Start()
     {
-
+        anim = GetComponent<Animator>();
         
     }
 
@@ -21,9 +21,12 @@ public class Trajectory : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            anim.SetTrigger("throw");
             MouseRayCast();
-            Throw();
+            //Throw();
         }
+        
+
     }
 
     void Throw()
@@ -55,4 +58,6 @@ public class Trajectory : MonoBehaviour
     {
         target = new Vector2(cam.ScreenToWorldPoint(Input.mousePosition).x, cam.ScreenToWorldPoint(Input.mousePosition).y);
     }
+
+    
 }

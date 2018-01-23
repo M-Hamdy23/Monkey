@@ -12,13 +12,13 @@ public class CreateTree : MonoBehaviour
     public float timeTillHit = 1f;
     public int MaxTreeNum = 3;
     public int Trees = 0;
-    
+    Animator anim;
     void Start()
     {
         if (!cam)
             cam = Camera.main;
         throwPoint = this.GetComponent<Transform>();
-
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -28,7 +28,8 @@ public class CreateTree : MonoBehaviour
             MouseRayCast();
             if (Trees < MaxTreeNum)
             {
-                Throw();
+                anim.SetTrigger("throwSeed");
+                //Throw();
                 Trees += 1;
             }
 
@@ -37,7 +38,7 @@ public class CreateTree : MonoBehaviour
     }
     
 
-    void Throw()
+    void ThrowSeed()
     {
         float xdistance;
         xdistance = target.x - throwPoint.position.x;

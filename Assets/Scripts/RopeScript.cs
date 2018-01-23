@@ -17,8 +17,9 @@ public class RopeScript : MonoBehaviour
 
     public GameObject lastNode;
 
-
     public LineRenderer lr;
+
+    
 
     int vertexCount = 2;
     public List<GameObject> Nodes = new List<GameObject>();
