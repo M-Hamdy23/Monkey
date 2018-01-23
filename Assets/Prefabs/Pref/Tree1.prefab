@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4132500849031870}
   - component: {fileID: 212673971048132638}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tree1_0002_Layer-45-copy-18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4537955021706376}
   - component: {fileID: 212567169219536888}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tree1_0004_Layer-49
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4567054079883804}
   - component: {fileID: 212612305603386006}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tree1_0005_Layer-45-copy-27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4918534470755812}
   - component: {fileID: 212669870617376992}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tree1_0006_Layer-42-copy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4692994502720928}
   - component: {fileID: 212611996393161392}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tree1_0003_Layer-45-copy-19 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,9 +99,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4523826009625256}
-  m_Layer: 0
+  - component: {fileID: 61607132019735006}
+  - component: {fileID: 114458362871701504}
+  m_Layer: 10
   m_Name: Tree1
-  m_TagString: Untagged
+  m_TagString: tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,7 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4804444621323326}
   - component: {fileID: 212391184587493758}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tree1_0003_Layer-45-copy-19 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4750252789683700}
   - component: {fileID: 212745080064123148}
-  m_Layer: 0
+  - component: {fileID: 61886064390837860}
+  m_Layer: 10
   m_Name: Tree1_0001_Layer-6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4802879315562372}
   - component: {fileID: 212479764993714170}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tree1_0003_Layer-45-copy-19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,6 +282,69 @@ Transform:
   m_Father: {fileID: 4523826009625256}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &61607132019735006
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1395052456801982}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.03, y: -0.48}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.75, y: 3.88}
+  m_EdgeRadius: 0
+--- !u!61 &61886064390837860
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1944886829242610}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.07, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.34, y: 7.25}
+    newSize: {x: 5.34, y: 7.25}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.82, y: 7.25}
+  m_EdgeRadius: 0
+--- !u!114 &114458362871701504
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1395052456801982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824e33f0ee028f64f9128322830079c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
+  myEnemy: []
 --- !u!212 &212391184587493758
 SpriteRenderer:
   m_ObjectHideFlags: 1

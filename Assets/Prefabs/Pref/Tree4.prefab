@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4239201849935746}
   - component: {fileID: 212500205535467276}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tree4_0007_Layer-45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4757430351163130}
   - component: {fileID: 212328419759155810}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tree4_0006_Layer-45-copy-17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4205449598878796}
   - component: {fileID: 212420359261125732}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tree4_0004_Layer-45-copy-24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4670413838477162}
   - component: {fileID: 212181715725961502}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tree4_0004_Layer-45-copy-24 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 4491418115223818}
   - component: {fileID: 212499498868843584}
   - component: {fileID: 60500071289519138}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tree4_0005_Layer-42-copy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4563619440913536}
   - component: {fileID: 212882324389820944}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tree4_0000_Layer-6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,9 +116,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4442470368904914}
-  m_Layer: 0
+  - component: {fileID: 61486586572589704}
+  - component: {fileID: 114128526862768294}
+  m_Layer: 10
   m_Name: Tree4
-  m_TagString: Untagged
+  m_TagString: tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,7 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4321540012539966}
   - component: {fileID: 212756368825712806}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tree4_0003_Layer-42-copy-6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4609243295784220}
   - component: {fileID: 212087078703578296}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tree4_0001_Layer-50
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +203,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1797995621421084}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.05, y: -1.44, z: 0}
+  m_LocalPosition: {x: 49.67, y: -1.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4563619440913536}
@@ -337,6 +339,44 @@ PolygonCollider2D:
       - {x: -0.39499998, y: -0.145}
       - {x: -0.255, y: -0.114999995}
       - {x: -0.13499999, y: -0.085}
+--- !u!61 &61486586572589704
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1797995621421084}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.02, y: -0.48}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.75, y: 3.88}
+  m_EdgeRadius: 0
+--- !u!114 &114128526862768294
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1797995621421084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824e33f0ee028f64f9128322830079c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
+  myEnemy: []
 --- !u!212 &212087078703578296
 SpriteRenderer:
   m_ObjectHideFlags: 1

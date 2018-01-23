@@ -14,9 +14,14 @@ public class EnemyTreeBehavior : MonoBehaviour {
     public bool isWork;
     public float coolDown;
     public float maxDis = 1.2f;
+    Animator anim;
+    public float health=100;
+    
+    
     // Use this for initialization
     void Start () {
         //player = GameObject.FindGameObjectWithTag("Player");
+        anim = GetComponentInChildren<Animator>();
         rigid = gameObject.GetComponent<Rigidbody2D>();
         gameManger = FindObjectOfType<GameManager>();
         index = gameManger.randomTree();
@@ -26,43 +31,64 @@ public class EnemyTreeBehavior : MonoBehaviour {
             target.myEnemy.Add(this);
 
             float dis = transform.position.x - target.gameObject.transform.position.x;
-
+            
             Vector3 theScale = transform.localScale;
             theScale.x *= (dis / Mathf.Abs(dis));
             transform.localScale = theScale;
 
-
+            float dir = target.gameObject.transform.position.x - transform.position.x;
+            rigid.velocity = new Vector2(dir / Mathf.Abs(dir) * speed, 0);
+            isWork = true;
         }
         else
             target = null;
-	}
+        
+       
+    }
 	
 	// Update is called once per frame
 	void Update () {
         
         if (target) {
             
-            float dir = target.gameObject.transform.position.x - transform.position.x;
-            if (Mathf.Abs(dir) >= maxDis)
-            {
-                rigid.velocity = new Vector2(dir / Mathf.Abs(dir) * speed, 0);
 
+
+             float dir = target.gameObject.transform.position.x - transform.position.x;
+            if (Mathf.Abs(dir) > maxDis)
+            {
+
+                rigid.velocity = new Vector2(dir / Mathf.Abs(dir) * speed, 0);
+                anim.SetTrigger("walk");
             }
             else
             {
                 rigid.velocity = Vector2.zero;
-                HitTree();
+                anim.SetTrigger("idle");
+                if (isWork)
+                {
+                    anim.SetTrigger("cut");
+                    //StopCoroutine(CoolDown());
+                    StartCoroutine(CoolDown());
+                }
+                
             }
         }
+        else
+        {
+            anim.SetTrigger("idle");
+        }
 
-        
+        isDie();
             
         
     }
     
-    void HitTree()
+    void isDie()
     {
-         
+         if(health <= 0)
+        {
+            anim.SetTrigger("die");
+        }
         
     }
 
@@ -81,6 +107,11 @@ public class EnemyTreeBehavior : MonoBehaviour {
             {
                 target = gameManger.allTrees[index];
                 target.myEnemy.Add(this);
+
+                float dis =  target.gameObject.transform.position.x-transform.position.x;
+                Vector3 theScale = transform.localScale;
+                theScale.x *= (-1*dis / Mathf.Abs(dis));
+                transform.localScale = theScale;
             } else
                 target = null;
         }
@@ -104,4 +135,6 @@ public class EnemyTreeBehavior : MonoBehaviour {
         yield return new WaitForSeconds(coolDown);
         isWork = true;
     }
+
+
 }

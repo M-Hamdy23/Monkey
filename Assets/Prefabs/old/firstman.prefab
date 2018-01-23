@@ -264,6 +264,7 @@ GameObject:
   - component: {fileID: 4548382050356338}
   - component: {fileID: 95851870299699992}
   - component: {fileID: 114707415600668620}
+  - component: {fileID: 114779486403923848}
   m_Layer: 0
   m_Name: firest man
   m_TagString: Untagged
@@ -446,7 +447,7 @@ GameObject:
   - component: {fileID: 114338915316592328}
   m_Layer: 11
   m_Name: firstman
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -606,7 +607,7 @@ Transform:
   - {fileID: 4481860038268426}
   m_Father: {fileID: 4378451921216626}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 21.257002}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 21.256}
 --- !u!4 &4127811402348210
 Transform:
   m_ObjectHideFlags: 1
@@ -1070,7 +1071,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.22, y: 0.23}
@@ -1243,7 +1244,7 @@ MonoBehaviour:
       defaultLocalRotation: {x: 0, y: 0, z: 0.030216731, w: 0.9995434}
     m_Weight: 1
     m_RestoreDefaultPose: 1
-    targetPosition: {x: 23.88445, y: -3.8475513, z: -0.19078583}
+    targetPosition: {x: 23.88445, y: -3.8475513, z: -0.011505834}
     flip: 0
 --- !u!114 &114200640405240400
 MonoBehaviour:
@@ -1305,8 +1306,9 @@ MonoBehaviour:
   rigid: {fileID: 0}
   index: 0
   isWork: 0
-  coolDown: 0
+  coolDown: 5
   maxDis: 1.4
+  health: 100
 --- !u!114 &114378380927792016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1358,7 +1360,7 @@ MonoBehaviour:
       defaultLocalRotation: {x: 0, y: 0, z: 0.050017074, w: 0.99874836}
     m_Weight: 1
     m_RestoreDefaultPose: 1
-    targetPosition: {x: 23.417732, y: -3.2182574, z: -0.19078583}
+    targetPosition: {x: 23.417732, y: -3.2182574, z: -0.011505834}
     flip: 1
 --- !u!114 &114446939167424420
 MonoBehaviour:
@@ -1554,6 +1556,17 @@ MonoBehaviour:
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4134258070373800}
   m_AttachedIK: {fileID: 114382480530596356}
+--- !u!114 &114779486403923848
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1434221526179138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f90ce8a10531147b2d70eaeadc0bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114859582188964756
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1609,7 +1622,7 @@ MonoBehaviour:
       defaultLocalRotation: {x: 0, y: 0, z: 0.011210156, w: 0.99993724}
     m_Weight: 1
     m_RestoreDefaultPose: 1
-    targetPosition: {x: 24.063618, y: -3.846445, z: -0.19078583}
+    targetPosition: {x: 24.063618, y: -3.846445, z: -0.011505834}
     flip: 0
 --- !u!114 &114901864716128068
 MonoBehaviour:
@@ -1646,7 +1659,7 @@ MonoBehaviour:
       defaultLocalRotation: {x: 0, y: 0, z: -0.038490295, w: 0.999259}
     m_Weight: 1
     m_RestoreDefaultPose: 1
-    targetPosition: {x: 24.304718, y: -3.4140131, z: -0.19078583}
+    targetPosition: {x: 24.304718, y: -3.4140131, z: -0.011505834}
     flip: 1
 --- !u!114 &114925210667588776
 MonoBehaviour:

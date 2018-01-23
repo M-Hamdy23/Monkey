@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4884386880329256}
   - component: {fileID: 212210289989294206}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tree2_0001_Layer-52-copy-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4315494679498918}
   - component: {fileID: 212158866963817320}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: rope3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4513745419392652}
   - component: {fileID: 212625505434783834}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tree2_0000_Layer-6-copy-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4130911629319326}
   - component: {fileID: 212719041997659516}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tree2_0001_Layer-52-copy-2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4207638819751926}
   - component: {fileID: 212538791600881468}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: rope2 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4520159159086956}
   - component: {fileID: 212365105915876224}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: rope2 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4579479559088270}
   - component: {fileID: 212077440414473176}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tree2_0004_Layer-6-copy-4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,9 +131,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4012574871311812}
-  m_Layer: 0
+  - component: {fileID: 61781194923372854}
+  - component: {fileID: 114111620318850954}
+  m_Layer: 10
   m_Name: Tree2
-  m_TagString: Untagged
+  m_TagString: tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,7 +149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4794552283282276}
   - component: {fileID: 212159000866882262}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: rope3 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4936169830969918}
   - component: {fileID: 212615222510107256}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: rope1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4336327318493754}
   - component: {fileID: 212048679463468542}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: rope2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4327690432055272}
   - component: {fileID: 212407392307363528}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tree2_0001_Layer-52-copy-2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +211,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1487693273150476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.24, y: -1.44, z: 0}
+  m_LocalPosition: {x: 30.1, y: -1.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4513745419392652}
@@ -369,6 +371,44 @@ Transform:
   m_Father: {fileID: 4012574871311812}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &61781194923372854
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1487693273150476}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.07, y: -0.48}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.75, y: 3.88}
+  m_EdgeRadius: 0
+--- !u!114 &114111620318850954
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1487693273150476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824e33f0ee028f64f9128322830079c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
+  myEnemy: []
 --- !u!212 &212048679463468542
 SpriteRenderer:
   m_ObjectHideFlags: 1
