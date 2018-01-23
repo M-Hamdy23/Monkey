@@ -57,7 +57,8 @@ public class MonkeyController : MonoBehaviour
         {
            firstJump = false;
             anim.SetBool("Ground", false);
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
+            // GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
+            //jump();
         }
     }
     void Flip()
@@ -66,5 +67,10 @@ public class MonkeyController : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+
+    void jump()
+    {
+        GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
     }
 }

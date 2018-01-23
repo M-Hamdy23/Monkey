@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae0543fe805424df99fe08ce744cbe49, type: 3}
+  m_Name: firest man bind pose
+  m_EditorClassIdentifier: 
+  m_PoseEntries:
+  - path: bones/pelvic
+    localPosition: {x: -1.8993392, y: -1.868269, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.7029589, w: 0.7112305}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: bones/pelvic/right leg
+    localPosition: {x: -0.05235059, y: 0.16270515, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.99533325, w: 0.096497186}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: bones/pelvic/right leg/New bone
+    localPosition: {x: 1.9403311, y: -0.00000035762787, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.11399315, w: 0.9934815}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: bones/pelvic/right leg/New bone/New bone
+    localPosition: {x: 2.4096572, y: 0.00000021248707, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.643078, w: -0.7658007}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: bones/pelvic/chest
+    localPosition: {x: 1.0000001, y: 0, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.023164073, w: 0.9997317}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: bones/pelvic/chest/head
+    localPosition: {x: 5.225506, y: 0.000000073894626, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.02004232, w: 0.99979913}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: bones/pelvic/chest/larm
+    localPosition: {x: 5.654144, y: -4.120362, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.9991456, w: -0.04132874}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: bones/pelvic/chest/larm/lwtist
+    localPosition: {x: 4.1139574, y: -0.00000011920929, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.2258397, w: 0.9741645}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: bones/pelvic/chest/larm/lwtist/lhand
+    localPosition: {x: 3.0069637, y: 0.00000035448465, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.027396435, w: -0.99962467}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: bones/pelvic/chest/rarm
+    localPosition: {x: 6.2643585, y: 2.3464236, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.99641144, w: 0.08464219}
+    localScale: {x: 1.0000004, y: 1.0000004, z: 1}
+  - path: bones/pelvic/chest/rarm/rwtist
+    localPosition: {x: 3.9613764, y: -0.0000002384185, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.23507333, w: 0.97197765}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: bones/pelvic/chest/rarm/rwtist/rhand
+    localPosition: {x: 2.8811188, y: -0.0000001223525, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.108921334, w: -0.9940504}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: bones/pelvic/left leg
+    localPosition: {x: -0.1358746, y: -0.55880207, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.99958223, w: -0.028903674}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: bones/pelvic/left leg/New bone
+    localPosition: {x: 1.9674681, y: 0.000000029802322, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.1844339, w: 0.98284495}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: bones/pelvic/left leg/New bone/New bone
+    localPosition: {x: 2.3500059, y: 0.00000019558956, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.7416119, w: 0.6708292}
+    localScale: {x: 1, y: 1, z: 1}

@@ -13,6 +13,7 @@ public class EnemyTreeBehavior : MonoBehaviour {
     public int index;
     public bool isWork;
     public float coolDown;
+    public float maxDis = 1.2f;
     // Use this for initialization
     void Start () {
         //player = GameObject.FindGameObjectWithTag("Player");
@@ -23,6 +24,14 @@ public class EnemyTreeBehavior : MonoBehaviour {
         {
             target = gameManger.allTrees[index];
             target.myEnemy.Add(this);
+
+            float dis = transform.position.x - target.gameObject.transform.position.x;
+
+            Vector3 theScale = transform.localScale;
+            theScale.x *= (dis / Mathf.Abs(dis));
+            transform.localScale = theScale;
+
+
         }
         else
             target = null;
@@ -34,7 +43,7 @@ public class EnemyTreeBehavior : MonoBehaviour {
         if (target) {
             
             float dir = target.gameObject.transform.position.x - transform.position.x;
-            if (Mathf.Abs(dir) >= 1.2f)
+            if (Mathf.Abs(dir) >= maxDis)
             {
                 rigid.velocity = new Vector2(dir / Mathf.Abs(dir) * speed, 0);
 

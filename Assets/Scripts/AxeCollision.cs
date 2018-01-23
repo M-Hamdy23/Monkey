@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AxeCollision : MonoBehaviour {
     float damage= 10;
-    Tree curenttree;
+    
     
 	// Use this for initialization
 	void Start () {
@@ -19,7 +19,7 @@ public class AxeCollision : MonoBehaviour {
     {
         if (collision.gameObject.tag=="tree")
         {
-            curenttree.GetComponent<Tree>().hp -= damage;
+            collision.gameObject.GetComponent<Tree>().hp -= damage;
             
         }
     }
