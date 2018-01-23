@@ -1308,7 +1308,7 @@ MonoBehaviour:
   isWork: 0
   coolDown: 5
   maxDis: 1.4
-  health: 100
+  hp: 100
 --- !u!114 &114378380927792016
 MonoBehaviour:
   m_ObjectHideFlags: 1

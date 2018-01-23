@@ -50,7 +50,7 @@ public class Trajectory : MonoBehaviour
         GameObject bulletInstance = Instantiate(ball, throwPoint.position, Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject;
         Rigidbody2D rigid;
         rigid = bulletInstance.GetComponent<Rigidbody2D>();
-
+        ball.GetComponent<ShurikenCollision>().hitdamage=GetComponent<MonkeyState>().hitdamage;
         rigid.velocity = new Vector2(xValue*speed, yValue*speed);
     }
 

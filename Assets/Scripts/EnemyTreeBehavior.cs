@@ -15,7 +15,7 @@ public class EnemyTreeBehavior : MonoBehaviour {
     public float coolDown;
     public float maxDis = 1.2f;
     Animator anim;
-    public float health=100;
+    public float hp=100;
     
     
     // Use this for initialization
@@ -85,7 +85,7 @@ public class EnemyTreeBehavior : MonoBehaviour {
     
     void isDie()
     {
-         if(health <= 0)
+         if(hp <= 0)
         {
             anim.SetTrigger("die");
         }
@@ -108,9 +108,9 @@ public class EnemyTreeBehavior : MonoBehaviour {
                 target = gameManger.allTrees[index];
                 target.myEnemy.Add(this);
 
-                float dis =  target.gameObject.transform.position.x-transform.position.x;
+                float dis = transform.position.x - target.gameObject.transform.position.x;
                 Vector3 theScale = transform.localScale;
-                theScale.x *= (-1*dis / Mathf.Abs(dis));
+                theScale.x = (dis / Mathf.Abs(dis));
                 transform.localScale = theScale;
             } else
                 target = null;

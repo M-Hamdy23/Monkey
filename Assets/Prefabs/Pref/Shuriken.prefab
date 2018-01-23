@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50974344232153260}
   - component: {fileID: 60863754979779540}
   - component: {fileID: 95275390209519374}
+  - component: {fileID: 114819746972204106}
   m_Layer: 0
   m_Name: Shuriken
   m_TagString: Untagged
@@ -72,7 +73,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -129,6 +130,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114819746972204106
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1102271713368410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8a193ffad99256468f3bf1bf06e5713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitdamage: 10
 --- !u!212 &212818307892123932
 SpriteRenderer:
   m_ObjectHideFlags: 1
