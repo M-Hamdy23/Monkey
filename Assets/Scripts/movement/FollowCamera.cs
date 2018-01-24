@@ -23,9 +23,9 @@ public class FollowCamera : MonoBehaviour {
 			interpVelocity = targetDirection.magnitude * 10f;
 			targetPos = transform.position + (targetDirection.normalized * interpVelocity * Time.deltaTime);
             
-            if (targetPos.y< LowY){
+            //if (targetPos.y< LowY){
                 targetPos.y = LowY;
-            }
+            //}
             transform.position = Vector3.Lerp( transform.position, targetPos , 0.25f);
             
 		}
