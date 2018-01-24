@@ -96,6 +96,13 @@ public class EnemyTreeBehavior : MonoBehaviour {
          if(hp <= 0)
         {
             anim.SetTrigger("die");
+            for (int i = 0; i < target.myEnemy.Count; i++)
+            {
+               if(target.myEnemy[i].gameObject.name==gameObject.name)
+                {
+                    target.myEnemy.RemoveAt(i);
+                }
+            }
         }
         
     }

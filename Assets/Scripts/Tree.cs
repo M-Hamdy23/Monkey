@@ -24,20 +24,20 @@ public class Tree : MonoBehaviour {
     {
         if (hp<=0)
         {
-            print("2bl");
+            
             target = myEnemy[0];
-            print("b3d");
+            
 
             for (int i = 0; i < myEnemy.Count; i++)
             {
-                print("hi");
+                
                 myEnemy[i].target = null;
                 
             }
             target.removeTree();
             for (int i = 0; i < myEnemy.Count; i++)
             {
-                print("hi from");
+                
                 myEnemy[i].RandomTarget();
                
             }
