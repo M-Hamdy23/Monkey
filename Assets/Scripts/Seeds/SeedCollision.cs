@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SeedCollision : MonoBehaviour {
-    public GameObject TreePrefab;
+    public GameObject[] TreePrefabs;
     // Use this for initialization
     void Start () {
 		
@@ -16,15 +16,16 @@ public class SeedCollision : MonoBehaviour {
 	}
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("hi");
+        
         if (collision.gameObject.CompareTag("dirt"))
         {
-            
-          GameObject bulletInstance = Instantiate(TreePrefab, collision.transform.position, Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject;
+            int index = Random.Range(0, TreePrefabs.Length);
+            Vector3 p = TreePrefabs[index].transform.position;
+            p.x = collision.transform.position.x;
+          GameObject bulletInstance = Instantiate(TreePrefabs[index], p, Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject;
 
-            Debug.Log(("ssgw"));
-            var treepos = collision.gameObject.GetComponent<Transform>().position;
-            Destroy(this);
+           
+            Destroy(gameObject);
         }
     }
     //private void OnCollisionEnter2D(Collision2D collision)

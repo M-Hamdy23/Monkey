@@ -17,9 +17,12 @@ public class ShurikenCollision : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            if(collision.gameObject.GetComponent<EnemyTreeBehavior>())
-                collision.gameObject.GetComponent<EnemyTreeBehavior>().hp -=hitdamage;
+            if (collision.gameObject.GetComponent<EnemyTreeBehavior>())
+            {
+                collision.gameObject.GetComponent<EnemyTreeBehavior>().hp -= hitdamage;
+            }
 
         }
+        Destroy(gameObject);
     }
 }
