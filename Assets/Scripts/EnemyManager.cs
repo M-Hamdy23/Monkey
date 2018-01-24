@@ -8,9 +8,12 @@ public class EnemyManager : MonoBehaviour {
     public GameObject spawnPos;
     public float respawnTime = 5;
 
+    public int enemeyNumber=0;
+
     // Use this for initialization
     void Start () {
         StartCoroutine(Respawn());
+        
     }
 	
 	// Update is called once per frame
@@ -31,6 +34,7 @@ public class EnemyManager : MonoBehaviour {
                 pos.y = -3.158f;
                 obj.transform.position = pos;
                 obj.SetActive(true);
+                enemeyNumber += 1;
                
             }
             else 
@@ -41,9 +45,11 @@ public class EnemyManager : MonoBehaviour {
                 pos.y = -3.158f;
                 obj.transform.position = pos;
                 obj.SetActive(true);
+                enemeyNumber += 1;
+
             }
-            
-            
+
+
             yield return new WaitForSeconds(respawnTime);
         }
     }

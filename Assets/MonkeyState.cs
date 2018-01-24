@@ -5,6 +5,7 @@ using UnityEngine;
 public class MonkeyState : MonoBehaviour {
     public float hp=100;
     public float hitdamage=10;
+    public int banana;
 	// Use this for initialization
 	void Start () {
 		

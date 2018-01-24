@@ -14,6 +14,7 @@ public class Tbullet : MonoBehaviour {
     public float speed=1;
     public bool isWork = true;
     Animator anim;
+    public int bananaCost = 2;
     void Start () {
         anim = GetComponent<Animator>();
         player = GetComponent<MonkeyController>().gameObject;
@@ -47,7 +48,7 @@ public class Tbullet : MonoBehaviour {
         Vector3 theScale = bulletInstance.transform.localScale;
         theScale.x *=(player.transform.localScale.x/Mathf.Abs(player.transform.localScale.x));
         bulletInstance.transform.localScale = theScale;
-
+        gameObject.GetComponent<MonkeyState>().banana -= bananaCost;
         Rigidbody2D rigid;
         rigid = bulletInstance.GetComponent<Rigidbody2D>();
 

@@ -22,7 +22,7 @@ public class ShurikenCollision : MonoBehaviour {
                 collision.gameObject.GetComponent<EnemyTreeBehavior>().hp -= hitdamage;
             }
 
-        }
-        Destroy(gameObject);
+        }else if(collision.gameObject.tag != "tree")
+            Destroy(gameObject);
     }
 }

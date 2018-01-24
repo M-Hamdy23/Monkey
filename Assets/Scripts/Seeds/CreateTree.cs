@@ -13,6 +13,7 @@ public class CreateTree : MonoBehaviour
     public int MaxTreeNum = 3;
     public int Trees = 0;
     Animator anim;
+    public int bananaCost = 5;
     void Start()
     {
         if (!cam)
@@ -57,6 +58,7 @@ public class CreateTree : MonoBehaviour
         yValue = totalValue * Mathf.Sin(throwAngle);
 
         GameObject bulletInstance = Instantiate(ball, throwPoint.position+new Vector3(0.5f,0,0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject;
+        gameObject.GetComponent<MonkeyState>().banana -= bananaCost;
         Rigidbody2D rigid;
         rigid = bulletInstance.GetComponent<Rigidbody2D>();
 

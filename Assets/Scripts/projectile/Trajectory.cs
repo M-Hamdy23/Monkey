@@ -10,6 +10,7 @@ public class Trajectory : MonoBehaviour
     public GameObject ball;
     public float speed = 1;
     public float timeTillHit = 1f;
+    public int bananaCost=1;
     Animator anim;
     void Start()
     {
@@ -48,6 +49,7 @@ public class Trajectory : MonoBehaviour
         yValue = totalValue * Mathf.Sin(throwAngle);
 
         GameObject bulletInstance = Instantiate(ball, throwPoint.position, Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject;
+        gameObject.GetComponent<MonkeyState>().banana-=bananaCost;
         Rigidbody2D rigid;
         rigid = bulletInstance.GetComponent<Rigidbody2D>();
         ball.GetComponent<ShurikenCollision>().hitdamage=GetComponent<MonkeyState>().hitdamage;

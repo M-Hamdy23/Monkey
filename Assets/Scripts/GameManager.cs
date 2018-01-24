@@ -6,13 +6,13 @@ public  class GameManager : MonoBehaviour {
 
     // Use this for initialization
     public List<Tree> allTrees;
-    public int bananaValue = 100;
-    public int healthValue = 100;
-    public int men = 100;
+    
+    public int men = 0;
+    
     public Text _banana;
     public Text _health;
     public Text _men;
-    public GameObject player;
+    public MonkeyState player;
     public EnemyManager enemyManger;
     private void Awake()
     {
@@ -23,7 +23,9 @@ public  class GameManager : MonoBehaviour {
         }
     }
     void Start () {
-        
+        _men.text = "0";
+        _health.text = ((int)(player.hp)).ToString();
+        _banana.text = player.banana.ToString();
 	}
 
     public int randomTree()
@@ -33,5 +35,11 @@ public  class GameManager : MonoBehaviour {
 
         var num = Random.Range(0, allTrees.Count);
         return num;
+    }
+    private void Update()
+    {
+        _health.text = ((int)(player.hp)).ToString();
+        _men.text = enemyManger.enemeyNumber.ToString();
+        _banana.text = player.banana.ToString();
     }
 }
