@@ -1,11 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public  class GameManager : MonoBehaviour {
 
     // Use this for initialization
     public List<Tree> allTrees;
+    public int bananaValue = 100;
+    public int healthValue = 100;
+    public int men = 100;
+    public Text _banana;
+    public Text _health;
+    public Text _men;
+    public GameObject player;
+    public EnemyManager enemyManger;
     private void Awake()
     {
         var trees = FindObjectsOfType<Tree>();

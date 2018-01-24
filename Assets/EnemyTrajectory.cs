@@ -35,6 +35,7 @@ public class EnemyTrajectory : MonoBehaviour {
         yValue = totalValue * Mathf.Sin(throwAngle);
 
         GameObject bulletInstance = Instantiate(ball, throwPoint.position, Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject;
+        bulletInstance.GetComponent<EnemyHitCollision>().hitdamage = GetComponentInParent<EnemyHitBehavior>().hitDamage;
         Rigidbody2D rigid;
         rigid = bulletInstance.GetComponent<Rigidbody2D>();
         //ball.GetComponent<ShurikenCollision>().hitdamage = GetComponent<MonkeyState>().hitdamage;
