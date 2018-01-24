@@ -1382,17 +1382,17 @@ Prefab:
     - target: {fileID: 114001504308354206, guid: 353311ee1981ea245bff452bb00ea1cd,
         type: 2}
       propertyPath: respawnTime
-      value: 50
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1594178910014090, guid: 353311ee1981ea245bff452bb00ea1cd, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114001504308354206, guid: 353311ee1981ea245bff452bb00ea1cd,
         type: 2}
       propertyPath: EnemyType2
       value: 
-      objectReference: {fileID: 1878257427871504, guid: c98f5f6a3ec4bf8458ca73103d5e45e8,
+      objectReference: {fileID: 1878257427871504, guid: 8b0d85820a9882244aa30695e0273b7b,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 353311ee1981ea245bff452bb00ea1cd, type: 2}

@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: firest man
+  m_Name: firest man 1
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: idle
@@ -271,7 +271,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: 1st man cutting
+  m_Name: throw 0
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -286,7 +286,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 140aaf606d029a0479a9b6b9090cf920, type: 2}
+  m_Motion: {fileID: 7400000, guid: 09b08cdcf2a80ab4ebce6e9c38cbf484, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -336,7 +336,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 09b08cdcf2a80ab4ebce6e9c38cbf484, type: 2}
+  m_Motion: {fileID: 0}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -361,7 +361,7 @@ AnimatorStateMachine:
     m_Position: {x: 300, y: 408, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102975611357174844}
-    m_Position: {x: 12, y: 336, z: 0}
+    m_Position: {x: 48, y: 360, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102831094147612148}
     m_Position: {x: 612, y: 252, z: 0}
