@@ -19,10 +19,18 @@ public class ShurikenCollision : MonoBehaviour {
         {
             if (collision.gameObject.GetComponent<EnemyTreeBehavior>())
             {
+
                 collision.gameObject.GetComponent<EnemyTreeBehavior>().hp -= hitdamage;
             }
+            if (collision.gameObject.GetComponent<EnemyHitBehavior>())
+            {
+                collision.gameObject.GetComponent<EnemyHitBehavior>().hp -= hitdamage;
+            }
 
-        }else if(collision.gameObject.tag != "tree")
+            collision.gameObject.GetComponent<AudioSource>().Play();
+
+        }
+        if (collision.gameObject.tag != "tree")
             Destroy(gameObject);
     }
 }

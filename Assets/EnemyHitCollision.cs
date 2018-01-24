@@ -20,7 +20,8 @@ public class EnemyHitCollision : MonoBehaviour {
         {
             if (collision.gameObject.GetComponent<MonkeyState>())
             {
-                collision.gameObject.GetComponent<MonkeyState>().hp -= hitdamage;
+                collision.gameObject.GetComponent<MonkeyState>().hp -= collision.gameObject.GetComponent<MonkeyState>().hitdamage;
+                print(hitdamage);
             }
 
         }else if(collision.gameObject.tag !="Enemy" )

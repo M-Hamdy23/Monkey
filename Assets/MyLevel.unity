@@ -1265,7 +1265,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 58baffaff383e614292ded2ad100deec, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.52
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1321,7 +1321,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1504,7 +1504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
-  hitdamage: 10
+  hitdamage: 50
   banana: 1000
 --- !u!1 &516978720
 GameObject:
@@ -4222,6 +4222,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 42.646004
       objectReference: {fileID: 0}
+    - target: {fileID: 114129371647284446, guid: 30faeeab087158845bafe1bf58cfc312,
+        type: 2}
+      propertyPath: MaxTreeNum
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 30faeeab087158845bafe1bf58cfc312, type: 2}
   m_IsPrefabParent: 0
@@ -5315,16 +5320,6 @@ Prefab:
     - target: {fileID: 4777046633821224, guid: 84dc36023ba5a244f9ebd5491819df27, type: 2}
       propertyPath: m_RootOrder
       value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 61672972073887328, guid: 84dc36023ba5a244f9ebd5491819df27,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: -0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 61947093870322110, guid: 84dc36023ba5a244f9ebd5491819df27,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 155.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 84dc36023ba5a244f9ebd5491819df27, type: 2}

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public  class GameManager : MonoBehaviour {
 
@@ -38,6 +39,12 @@ public  class GameManager : MonoBehaviour {
     }
     private void Update()
     {
+        if (allTrees.Count <= 0 || player.hp<=0)
+        {
+            enemyManger.gameObject.SetActive(false);
+            SceneManager.LoadScene(0);
+        }
+
         _health.text = ((int)(player.hp)).ToString();
         _men.text = enemyManger.enemeyNumber.ToString();
         _banana.text = player.banana.ToString();
