@@ -23,7 +23,7 @@ public class EnemyHitCollision : MonoBehaviour {
                 collision.gameObject.GetComponent<MonkeyState>().hp -= hitdamage;
             }
 
-        }
-        Destroy(gameObject);
+        }else if(collision.gameObject.tag !="Enemy" )
+            Destroy(gameObject);
     }
 }

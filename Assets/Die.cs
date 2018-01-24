@@ -6,6 +6,6 @@ public class Die : MonoBehaviour {
 
 	void _die()
     {
-        Destroy(GetComponentInParent<BoxCollider2D>().gameObject,5);
+        Destroy(GetComponentInParent<BoxCollider2D>().gameObject,2);
     }
 }

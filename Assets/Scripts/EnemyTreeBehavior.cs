@@ -17,9 +17,10 @@ public class EnemyTreeBehavior : MonoBehaviour {
     Animator anim;
     public float hp=100;
     public AxeCollision axe;
-    
+    public AudioSource cutSound;
     // Use this for initialization
     void Start () {
+        cutSound = GetComponent<AudioSource>();
         //player = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponentInChildren<Animator>();
         rigid = gameObject.GetComponent<Rigidbody2D>();
@@ -74,6 +75,7 @@ public class EnemyTreeBehavior : MonoBehaviour {
                 if (isWork)
                 {
                     anim.SetTrigger("cut");
+                    cutSound.Play();
                     //StopCoroutine(CoolDown());
                     StartCoroutine(CoolDown());
                 }
@@ -96,6 +98,7 @@ public class EnemyTreeBehavior : MonoBehaviour {
          if(hp <= 0)
         {
             anim.SetTrigger("die");
+            cutSound.Stop();
             for (int i = 0; i < target.myEnemy.Count; i++)
             {
                if(target.myEnemy[i].gameObject.name==gameObject.name)
