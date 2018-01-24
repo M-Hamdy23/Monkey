@@ -16,7 +16,7 @@ public class EnemyTreeBehavior : MonoBehaviour {
     public float maxDis = 1.2f;
     Animator anim;
     public float hp=100;
-    
+    public AxeCollision axe;
     
     // Use this for initialization
     void Start () {
@@ -25,6 +25,7 @@ public class EnemyTreeBehavior : MonoBehaviour {
         rigid = gameObject.GetComponent<Rigidbody2D>();
         gameManger = FindObjectOfType<GameManager>();
         index = gameManger.randomTree();
+        axe = GetComponentInChildren<AxeCollision>();
         if (index != -1)
         {
             target = gameManger.allTrees[index];
@@ -39,11 +40,13 @@ public class EnemyTreeBehavior : MonoBehaviour {
             float dir = target.gameObject.transform.position.x - transform.position.x;
             rigid.velocity = new Vector2(dir / Mathf.Abs(dir) * speed, 0);
             isWork = true;
+            
+            
         }
         else
             target = null;
-        
-       
+
+        axe.target = target;
     }
 	
 	// Update is called once per frame
@@ -59,6 +62,10 @@ public class EnemyTreeBehavior : MonoBehaviour {
 
                 rigid.velocity = new Vector2(dir / Mathf.Abs(dir) * speed, 0);
                 anim.SetTrigger("walk");
+                float dis = transform.position.x - target.gameObject.transform.position.x;
+                Vector3 theScale = transform.localScale;
+                theScale.x = (dis / Mathf.Abs(dis));
+                transform.localScale = theScale;
             }
             else
             {
@@ -75,6 +82,7 @@ public class EnemyTreeBehavior : MonoBehaviour {
         }
         else
         {
+            rigid.velocity = Vector2.zero;
             anim.SetTrigger("idle");
         }
 
@@ -114,7 +122,10 @@ public class EnemyTreeBehavior : MonoBehaviour {
                 transform.localScale = theScale;
             } else
                 target = null;
+
+            axe.target = target;
         }
+        axe.target = null;
     }
     public void removeTree()
     {

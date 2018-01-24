@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AxeCollision : MonoBehaviour {
     float damage= 10;
-    
-    
+
+    public Tree target;
 	// Use this for initialization
 	void Start () {
 		
@@ -15,20 +15,23 @@ public class AxeCollision : MonoBehaviour {
 	void Update () {
 		
 	}
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag=="tree")
-        {
-            collision.gameObject.GetComponent<Tree>().hp -= damage;
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject==target.gameObject)
+    //    {
+    //        collision.gameObject.GetComponent<Tree>().hp -= damage;
             
-        }
-    }
+    //    }
+    //}
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "tree")
+        if (target)
         {
-            collision.gameObject.GetComponent<Tree>().hp -= damage;
+            if (collision.gameObject == target.gameObject)
+            {
+                collision.gameObject.GetComponent<Tree>().hp -= damage;
 
+            }
         }
     }
 }
